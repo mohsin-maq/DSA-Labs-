@@ -1,0 +1,73 @@
+def Mat_mul(A,B):
+
+    C=[[0,0],[0,0]]
+    for i in range(len(A)):
+        for j in range(len(B)):
+            C[i][j]=0
+            for k in range(len(A)):
+                C[i][j]=C[i][j]+A[i][k]*B[k][j]
+
+    print( C )
+
+A=[[2,3],
+   [5,3]]
+
+B=[[1,2],
+   [4,3]]
+
+Mat_mul(A,B)
+#Q.2
+row_a=int(input('Enter the number of rows for matrix a'))
+column_a=int(input('Enter the number of columns for matrix a'))
+A=[]
+for i in range(row_a):
+    element_list=[]
+    for j in range(column_a):
+        n=int(input('Enter element'))
+        element_list.append(n)
+    A.append(element_list)
+
+print(A)
+
+row_b=int(input('Enter the number of rows for matrix b'))
+column_b=int(input('Enter the number of columns for matrix b'))
+B=[]
+for i in range(row_b):
+    element_list=[]
+    for j in range(column_b):
+        n=int(input('Enter element'))
+        element_list.append(n)
+    B.append(element_list)
+
+print(B)
+
+#For matrix multiplication,the number of columns in the first matrix must be equal to the number of rows in the second matrix
+
+if column_a==row_b:
+
+    def Mat_mul(A, B):
+
+        #lets create matrix C
+        #it will be equal to rows of first and coloumns of second
+        C=[]
+        for i in range(row_a):
+            e_list=[]
+            for j in range(column_b):
+                e_list.append(0)
+            C.append(e_list)
+        print(C)
+
+
+        for i in range(row_a):
+            for j in range(column_b):
+                C[i][j] = 0
+                for k in range(column_a):
+                    C[i][j] = C[i][j] + A[i][k] * B[k][j]
+
+        print(C)
+        #
+
+    Mat_mul(A,B)
+
+else:
+    print('The condition neccessary for matrix multiply is not followed here')
